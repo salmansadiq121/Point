@@ -1,0 +1,221 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Brand palette */
+  --brand-primary: #18a44a;
+  --brand-green-dark: #145c35;
+  --brand-blue: #0990d4;
+  --brand-ink: #0f1214;
+  --brand-white: #ffffff;
+
+  /* Theme mapping (use only brand tokens above) */
+  --background: var(--brand-ink);
+  --foreground: var(--brand-white);
+  --card: color-mix(in oklab, var(--brand-ink) 92%, var(--brand-white));
+  --card-foreground: var(--brand-white);
+  --popover: var(--brand-ink);
+  --popover-foreground: var(--brand-white);
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--brand-white);
+  --secondary: var(--brand-green-dark);
+  --secondary-foreground: var(--brand-white);
+  --muted: color-mix(in oklab, var(--brand-ink) 85%, var(--brand-white));
+  --muted-foreground: color-mix(
+    in oklab,
+    var(--brand-white) 75%,
+    var(--brand-ink)
+  );
+  --accent: var(--brand-blue);
+  --accent-foreground: var(--brand-ink);
+  --destructive: var(--brand-primary); /* keep within palette */
+  --destructive-foreground: var(--brand-ink);
+  --border: color-mix(in oklab, var(--brand-ink) 75%, var(--brand-white));
+  --input: color-mix(in oklab, var(--brand-ink) 75%, var(--brand-white));
+  --ring: var(--brand-blue);
+
+  /* Charts & sidebar stay within palette */
+  --chart-1: var(--brand-primary);
+  --chart-2: var(--brand-blue);
+  --chart-3: var(--brand-green-dark);
+  --chart-4: color-mix(in oklab, var(--brand-primary) 70%, var(--brand-white));
+  --chart-5: color-mix(in oklab, var(--brand-blue) 70%, var(--brand-white));
+
+  --radius: 0.75rem;
+
+  --sidebar: color-mix(in oklab, var(--brand-ink) 92%, var(--brand-white));
+  --sidebar-foreground: var(--brand-white);
+  --sidebar-primary: var(--brand-primary);
+  --sidebar-primary-foreground: var(--brand-white);
+  --sidebar-accent: var(--brand-blue);
+  --sidebar-accent-foreground: var(--brand-ink);
+  --sidebar-border: color-mix(
+    in oklab,
+    var(--brand-ink) 75%,
+    var(--brand-white)
+  );
+  --sidebar-ring: var(--brand-blue);
+}
+
+/* Optional dark mode keeps same palette to maintain 3–5 colors total */
+.dark {
+  --background: var(--brand-ink);
+  --foreground: var(--brand-white);
+  --card: color-mix(in oklab, var(--brand-ink) 90%, var(--brand-white));
+  --card-foreground: var(--brand-white);
+  --popover: var(--brand-ink);
+  --popover-foreground: var(--brand-white);
+  --primary: var(--brand-primary);
+  --primary-foreground: var(--brand-white);
+  --secondary: var(--brand-green-dark);
+  --secondary-foreground: var(--brand-white);
+  --muted: color-mix(in oklab, var(--brand-ink) 82%, var(--brand-white));
+  --muted-foreground: color-mix(
+    in oklab,
+    var(--brand-white) 70%,
+    var(--brand-ink)
+  );
+  --accent: var(--brand-blue);
+  --accent-foreground: var(--brand-ink);
+  --destructive: var(--brand-primary);
+  --destructive-foreground: var(--brand-ink);
+  --border: color-mix(in oklab, var(--brand-ink) 72%, var(--brand-white));
+  --input: color-mix(in oklab, var(--brand-ink) 72%, var(--brand-white));
+  --ring: var(--brand-blue);
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom utilities for card backgrounds */
+@layer utilities {
+  /* --- Fallbacks (basic gradients) --- */
+  .bg-card-gradient {
+    background-image: linear-gradient(
+      135deg,
+      var(--brand-primary) 0%,
+      var(--brand-blue) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .bg-card-gradient-alt {
+    background-image: linear-gradient(
+      135deg,
+      var(--brand-green-dark) 0%,
+      var(--brand-blue) 100%
+    );
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .card-sheen {
+    /* subtle sheen fallback using rgba */
+    background-image: radial-gradient(
+      60% 100% at 0% 0%,
+      rgba(255, 255, 255, 0.06) 0%,
+      transparent 70%
+    );
+    background-repeat: no-repeat;
+    pointer-events: none;
+  }
+
+  /* --- Advanced: use color-mix if supported --- */
+  @supports (background-image: color-mix(in oklab, red 50%, blue 50%)) {
+    .bg-card-gradient {
+      background-image: linear-gradient(
+        135deg,
+        color-mix(in oklab, var(--brand-primary) 82%, var(--brand-ink) 18%) 0%,
+        color-mix(in oklab, var(--brand-blue) 78%, var(--brand-ink) 22%) 100%
+      );
+    }
+
+    .bg-card-gradient-alt {
+      background-image: linear-gradient(
+        135deg,
+        color-mix(in oklab, var(--brand-green-dark) 82%, var(--brand-ink) 18%)
+          0%,
+        color-mix(in oklab, var(--brand-blue) 70%, var(--brand-ink) 30%) 100%
+      );
+    }
+
+    .card-sheen {
+      background-image: radial-gradient(
+        60% 100% at 0% 0%,
+        color-mix(in oklab, var(--brand-white) 6%, transparent 94%) 0%,
+        transparent 70%
+      );
+    }
+  }
+
+  /* small helper that makes cards behave consistently */
+  .card-bg {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.75rem; /* example */
+    transition: transform 250ms cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+}
+
+/* Motion-safety: prefer reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .card-bg {
+    transition: none;
+  }
+  .bg-card-gradient,
+  .bg-card-gradient-alt,
+  .card-sheen {
+    background-attachment: scroll;
+    animation: none;
+  }
+}
