@@ -117,7 +117,7 @@ export function SiteFooter() {
           </div>
         </div>
 
-        <div className="mt-10 text-xs text-muted-foreground">
+        <div className="mt-10 text-xs text-muted-foreground w-full flex items-center justify-center">
           <p>© 2025 POINT Technologies C.A. – All rights reserved.</p>
         </div>
       </div>
