@@ -1,4 +1,7 @@
-"use client"
+"use client";
+
+import Link from "next/link";
+
 export function SiteFooter() {
   return (
     <footer className="border-t border-border/60">
@@ -8,17 +11,26 @@ export function SiteFooter() {
             <p className="font-semibold">Company</p>
             <ul className="mt-3 space-y-2 text-muted-foreground">
               <li>
-                <a href="#about" className="hover:text-accent underline decoration-accent/60">
+                <a
+                  href="#about"
+                  className="hover:text-accent underline decoration-accent/60"
+                >
                   About
                 </a>
               </li>
               <li>
-                <a href="#services" className="hover:text-accent underline decoration-accent/60">
+                <a
+                  href="#services"
+                  className="hover:text-accent underline decoration-accent/60"
+                >
                   Services
                 </a>
               </li>
               <li>
-                <a href="#payments" className="hover:text-accent underline decoration-accent/60">
+                <a
+                  href="#payments"
+                  className="hover:text-accent underline decoration-accent/60"
+                >
                   Payments
                 </a>
               </li>
@@ -28,17 +40,26 @@ export function SiteFooter() {
             <p className="font-semibold">Support</p>
             <ul className="mt-3 space-y-2 text-muted-foreground">
               <li>
-                <a href="#contact" className="hover:text-accent underline decoration-accent/60">
+                <a
+                  href="#contact"
+                  className="hover:text-accent underline decoration-accent/60"
+                >
                   Contact
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-accent underline decoration-accent/60">
+                <a
+                  href="#"
+                  className="hover:text-accent underline decoration-accent/60"
+                >
                   Help Center
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-accent underline decoration-accent/60">
+                <a
+                  href="#"
+                  className="hover:text-accent underline decoration-accent/60"
+                >
                   Status
                 </a>
               </li>
@@ -48,14 +69,20 @@ export function SiteFooter() {
             <p className="font-semibold">Legal</p>
             <ul className="mt-3 space-y-2 text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-accent underline decoration-accent/60">
+                <Link
+                  href="/privacy-policy"
+                  className="hover:text-accent underline decoration-accent/60"
+                >
                   Privacy Policy
-                </a>
+                </Link>
               </li>
               <li>
-                <a href="#" className="hover:text-accent underline decoration-accent/60">
+                <Link
+                  href="/terms"
+                  className="hover:text-accent underline decoration-accent/60"
+                >
                   Terms of Use
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -63,17 +90,26 @@ export function SiteFooter() {
             <p className="font-semibold">Follow</p>
             <ul className="mt-3 space-y-2 text-muted-foreground">
               <li>
-                <a href="#" className="hover:text-accent underline decoration-accent/60">
+                <a
+                  href="#"
+                  className="hover:text-accent underline decoration-accent/60"
+                >
                   Instagram
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-accent underline decoration-accent/60">
+                <a
+                  href="#"
+                  className="hover:text-accent underline decoration-accent/60"
+                >
                   X (Twitter)
                 </a>
               </li>
               <li>
-                <a href="#" className="hover:text-accent underline decoration-accent/60">
+                <a
+                  href="#"
+                  className="hover:text-accent underline decoration-accent/60"
+                >
                   LinkedIn
                 </a>
               </li>
@@ -86,5 +122,5 @@ export function SiteFooter() {
         </div>
       </div>
     </footer>
-  )
+  );
 }

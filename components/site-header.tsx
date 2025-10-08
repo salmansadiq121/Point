@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { M, useFadeUp } from "./motion-helpers";
 import { useState } from "react";
+import { IoMenu } from "react-icons/io5";
 
 const nav = [
   { href: "#home", label: "Home" },
@@ -16,27 +17,21 @@ export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-background/70 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <M.nav
         {...fade}
         className="mx-auto max-w-7xl px-6 h-16 md:h-20 flex items-center justify-between"
         aria-label="Primary"
       >
-        <Link
-          href="#home"
-          className="flex items-center gap-3 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring rounded-md"
-        >
+        <Link href="/" className="flex items-center gap-3 ">
           <img
-            src="/images/point-logo.jpg"
+            src="/Logo1bg.png"
             alt="POINT logo"
             width={36}
             height={36}
-            className="h-9 w-9 rounded-sm object-cover"
+            className="h-19 w-20"
           />
           <span className="sr-only">POINT Home</span>
-          <span aria-hidden className="text-lg font-semibold tracking-tight">
-            POINT
-          </span>
         </Link>
 
         <ul className="hidden md:flex items-center gap-6">
@@ -69,12 +64,7 @@ export function SiteHeader() {
           onClick={() => setOpen((v) => !v)}
         >
           <span className="sr-only">Toggle navigation</span>
-          <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              fill="currentColor"
-              d={open ? "M6 6l12 12M6 18L18 6" : "M3 6h18M3 12h18M3 18h18"}
-            />
-          </svg>
+          <IoMenu className="h-6 w-6 text-white" aria-hidden="true" />
         </button>
       </M.nav>
 

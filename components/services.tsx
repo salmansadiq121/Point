@@ -58,7 +58,7 @@ export function Services() {
           <M.li
             key={s.title}
             {...item}
-            className="relative rounded-xl border border-border/60  p-5 shadow-sm overflow-hidden"
+            className="relative rounded-xl border hover:border-sky-500/70 shadow hover:shadow-sky-500   p-5 overflow-hidden"
           >
             {/* Optional sheen overlay */}
             <div className="absolute inset-0 pointer-events-none card-sheen"></div>

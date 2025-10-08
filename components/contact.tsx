@@ -18,7 +18,7 @@ export function Contact() {
       <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
         <M.div
           {...item}
-          className="rounded-xl border border-border/60 bg-card p-6"
+          className="rounded-xl border border-sky-500/70 shadow shadow-sky-500  bg-card p-6"
         >
           <dl className="grid grid-cols-1 gap-4">
             <div>
@@ -26,9 +26,9 @@ export function Contact() {
               <dd>
                 <a
                   className="underline decoration-accent/60 hover:text-accent"
-                  href="mailto:support@pointapp.com"
+                  href="mailto:contacto@pointechnologiesapp.com"
                 >
-                  support@pointapp.com
+                  contacto@pointechnologiesapp.com
                 </a>
               </dd>
             </div>
@@ -87,7 +87,7 @@ export function Contact() {
           {...container}
           action="#"
           aria-describedby="contact-note"
-          className="rounded-xl border border-border/60 bg-card p-6"
+          className="rounded-xl border hover:border-sky-500/70 shadow hover:shadow-sky-500  bg-card p-6"
           onSubmit={(e) => e.preventDefault()}
         >
           <M.div {...item} className="grid grid-cols-1 gap-4">
