@@ -1,9 +1,47 @@
 "use client";
+
 import { M, SectionShell, useFadeUp, useStagger } from "./motion-helpers";
 
 export function About() {
   const fade = useFadeUp(0.05);
   const { container, item } = useStagger(0.08);
+
+  const metrics = [
+    { k: "Avg. Response", v: "7 min" },
+    { k: "Provider Pass Rate", v: "92%" },
+    { k: "Uptime (12m)", v: "99.9%" },
+    { k: "Cities", v: "15+" },
+  ];
+
+  const timeline = [
+    {
+      year: "2025",
+      text: "Ideation and first pilots in Maracaibo.",
+    },
+    {
+      year: "2025",
+      text: "Provider network expansion and payments hardening.",
+    },
+    {
+      year: "2025",
+      text: "Launching nationwide with multi-city coverage.",
+    },
+  ];
+
+  const values = [
+    {
+      t: "Trust & Safety",
+      d: "Rigorous verification and continuous performance checks.",
+    },
+    {
+      t: "Speed",
+      d: "Smart routing to the closest available provider.",
+    },
+    {
+      t: "Transparency",
+      d: "Clear pricing and status updates from start to finish.",
+    },
+  ];
 
   return (
     <SectionShell
@@ -11,6 +49,7 @@ export function About() {
       title="Who We Are"
       description="Built in Venezuela to connect users with trusted providers."
     >
+      {/* About Text */}
       <M.div {...fade} className="prose prose-invert max-w-none">
         <p>
           POINT is a platform created to unify everyday services in a single,
@@ -24,16 +63,11 @@ export function About() {
         {...container}
         className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4"
       >
-        {[
-          { k: "Avg. Response", v: "7 min" },
-          { k: "Provider Pass Rate", v: "92%" },
-          { k: "Uptime (12m)", v: "99.9%" },
-          { k: "Cities", v: "15+" },
-        ].map((m, i) => (
+        {metrics.map((m, i) => (
           <M.li
             key={m.k}
             {...item}
-            className={`rounded-xl border border-border/60 p-4 ${
+            className={`rounded-xl border border-border/60 p-4 shadow-sm transition hover:shadow-md ${
               i % 2
                 ? "bg-card-gradient-alt card-sheen"
                 : "bg-card-gradient card-sheen"
@@ -48,34 +82,19 @@ export function About() {
       {/* Timeline */}
       <div className="mt-10">
         <h3 className="text-lg font-semibold">Our Journey</h3>
-        <ol className="mt-4 space-y-4">
-          <M.li
-            {...item}
-            className="rounded-xl  border-green-500/60 border hover:border-sky-500/70 shadow hover:shadow-sky-500 bg-card p-4"
-          >
-            <p className="text-sm">
-              <strong>2025</strong> — Ideation and first pilots in Maracaibo.
-            </p>
-          </M.li>
-          <M.li
-            {...item}
-            className="rounded-xl border border-green-500/60 hover:border-sky-500/70 shadow hover:shadow-sky-500 bg-card p-4"
-          >
-            <p className="text-sm">
-              <strong>2025</strong> — Provider network expansion and payments
-              hardening.
-            </p>
-          </M.li>
-          <M.li
-            {...item}
-            className="rounded-xl border border-green-500/60 hover:border-sky-500/70 shadow hover:shadow-sky-500 bg-card p-4"
-          >
-            <p className="text-sm">
-              <strong>2025</strong> — Launching nationwide with multi‑city
-              coverage.
-            </p>
-          </M.li>
-        </ol>
+        <M.ol {...container} className="mt-4 space-y-4">
+          {timeline.map((t, i) => (
+            <M.li
+              key={i}
+              {...item}
+              className="rounded-xl border border-green-500/60 hover:border-sky-500/70 shadow hover:shadow-sky-500/30 bg-card p-4 transition"
+            >
+              <p className="text-sm">
+                <strong>{t.year}</strong> — {t.text}
+              </p>
+            </M.li>
+          ))}
+        </M.ol>
       </div>
 
       {/* Values */}
@@ -85,24 +104,11 @@ export function About() {
           {...container}
           className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3"
         >
-          {[
-            {
-              t: "Trust & Safety",
-              d: "Rigorous verification and continuous performance checks.",
-            },
-            {
-              t: "Speed",
-              d: "Smart routing to the closest available provider.",
-            },
-            {
-              t: "Transparency",
-              d: "Clear pricing and status updates from start to finish.",
-            },
-          ].map((v) => (
+          {values.map((v) => (
             <M.li
               key={v.t}
               {...item}
-              className="rounded-xl border border-border/60 bg-card p-4"
+              className="rounded-xl border border-border/60 bg-card p-4 transition hover:border-sky-500/70 hover:shadow-sky-500/30 shadow-sm"
             >
               <h4 className="font-medium">{v.t}</h4>
               <p className="mt-1 text-sm text-muted-foreground">{v.d}</p>

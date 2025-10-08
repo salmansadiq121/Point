@@ -5,11 +5,11 @@ import { useState } from "react";
 import { IoMenu } from "react-icons/io5";
 
 const nav = [
-  { href: "#home", label: "Home" },
-  { href: "#services", label: "Services" },
-  { href: "#about", label: "About Us" },
-  { href: "#payments", label: "Payments" },
-  { href: "#contact", label: "Contact" },
+  { href: "#home", label: "Inicio" },
+  { href: "#services", label: "Servicios" },
+  { href: "#about", label: "Sobre Nosotros" },
+  { href: "#payments", label: "Pagos" },
+  { href: "#contact", label: "Contacto" },
 ];
 
 export function SiteHeader() {
@@ -21,17 +21,17 @@ export function SiteHeader() {
       <M.nav
         {...fade}
         className="mx-auto max-w-7xl px-6 h-16 md:h-20 flex items-center justify-between"
-        aria-label="Primary"
+        aria-label="Principal"
       >
-        <Link href="/" className="flex items-center gap-3 ">
+        <Link href="/" className="flex items-center gap-3">
           <img
             src="/Logo1bg.png"
-            alt="POINT logo"
+            alt="Logo de POINT"
             width={36}
             height={36}
             className="h-19 w-20"
           />
-          <span className="sr-only">POINT Home</span>
+          <span className="sr-only">Inicio de POINT</span>
         </Link>
 
         <ul className="hidden md:flex items-center gap-6">
@@ -52,7 +52,7 @@ export function SiteHeader() {
             href="#contact"
             className="inline-flex items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
           >
-            Download APP
+            Descargar APP
           </a>
         </div>
 
@@ -63,7 +63,7 @@ export function SiteHeader() {
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
         >
-          <span className="sr-only">Toggle navigation</span>
+          <span className="sr-only">Alternar navegación</span>
           <IoMenu className="h-6 w-6 text-white" aria-hidden="true" />
         </button>
       </M.nav>
@@ -95,7 +95,7 @@ export function SiteHeader() {
               onClick={() => setOpen(false)}
               className="inline-flex w-full items-center justify-center rounded-lg bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"
             >
-              Get Started
+              Comenzar
             </a>
           </li>
         </ul>

@@ -8,14 +8,14 @@ export function SiteFooter() {
       <div className="mx-auto max-w-7xl px-6 py-12">
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-4 text-sm">
           <div>
-            <p className="font-semibold">Company</p>
+            <p className="font-semibold">Compañía</p>
             <ul className="mt-3 space-y-2 text-muted-foreground">
               <li>
                 <a
                   href="#about"
                   className="hover:text-accent underline decoration-accent/60"
                 >
-                  About
+                  Sobre Nosotros
                 </a>
               </li>
               <li>
@@ -23,7 +23,7 @@ export function SiteFooter() {
                   href="#services"
                   className="hover:text-accent underline decoration-accent/60"
                 >
-                  Services
+                  Servicios
                 </a>
               </li>
               <li>
@@ -31,20 +31,21 @@ export function SiteFooter() {
                   href="#payments"
                   className="hover:text-accent underline decoration-accent/60"
                 >
-                  Payments
+                  Pagos
                 </a>
               </li>
             </ul>
           </div>
+
           <div>
-            <p className="font-semibold">Support</p>
+            <p className="font-semibold">Soporte</p>
             <ul className="mt-3 space-y-2 text-muted-foreground">
               <li>
                 <a
                   href="#contact"
                   className="hover:text-accent underline decoration-accent/60"
                 >
-                  Contact
+                  Contacto
                 </a>
               </li>
               <li>
@@ -52,7 +53,7 @@ export function SiteFooter() {
                   href="#"
                   className="hover:text-accent underline decoration-accent/60"
                 >
-                  Help Center
+                  Centro de Ayuda
                 </a>
               </li>
               <li>
@@ -60,11 +61,12 @@ export function SiteFooter() {
                   href="#"
                   className="hover:text-accent underline decoration-accent/60"
                 >
-                  Status
+                  Estado del Servicio
                 </a>
               </li>
             </ul>
           </div>
+
           <div>
             <p className="font-semibold">Legal</p>
             <ul className="mt-3 space-y-2 text-muted-foreground">
@@ -73,7 +75,7 @@ export function SiteFooter() {
                   href="/privacy-policy"
                   className="hover:text-accent underline decoration-accent/60"
                 >
-                  Privacy Policy
+                  Política de Privacidad
                 </Link>
               </li>
               <li>
@@ -81,13 +83,14 @@ export function SiteFooter() {
                   href="/terms"
                   className="hover:text-accent underline decoration-accent/60"
                 >
-                  Terms of Use
+                  Términos de Uso
                 </Link>
               </li>
             </ul>
           </div>
+
           <div>
-            <p className="font-semibold">Follow</p>
+            <p className="font-semibold">Síguenos</p>
             <ul className="mt-3 space-y-2 text-muted-foreground">
               <li>
                 <a
@@ -118,7 +121,7 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-10 text-xs text-muted-foreground w-full flex items-center justify-center">
-          <p>© 2025 POINT Technologies C.A. – All rights reserved.</p>
+          <p>© 2025 POINT Technologies C.A. – Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

@@ -13,10 +13,10 @@ export function Hero() {
       aria-labelledby="home-title"
       className="relative overflow-hidden"
     >
-      {/* Solid background only (no gradients) */}
+      {/* Fondo sólido (sin degradados) */}
       <div aria-hidden className="absolute inset-0 bg-background" />
 
-      <div className="relative mx-auto max-w-7xl px-6  py-8 sm:py-12">
+      <div className="relative mx-auto max-w-7xl px-6 py-8 sm:py-12">
         <div className="grid grid-cols-1 gap-10 md:grid-cols-2 items-center">
           <div>
             <M.div {...title}>
@@ -24,16 +24,16 @@ export function Hero() {
                 id="home-title"
                 className="text-balance text-4xl md:text-6xl font-semibold tracking-tight"
               >
-                POINT — All your essential services, one tap away.
+                POINT — Todos tus servicios esenciales, a un toque de distancia.
               </h1>
             </M.div>
             <M.p
               {...subtitle}
               className="mt-4 md:mt-6 text-pretty text-base md:text-lg text-muted-foreground md:max-w-prose"
             >
-              From deliveries to roadside assistance, our vetted providers
-              respond fast with transparent pricing and secure payments. Built
-              for reliability across Venezuela.
+              Desde entregas hasta asistencia en carretera, nuestros proveedores
+              verificados responden rápidamente con precios transparentes y
+              pagos seguros. Diseñado para ofrecer fiabilidad en toda Venezuela.
             </M.p>
 
             <M.div {...ctas} className="mt-8 flex flex-wrap items-center gap-3">
@@ -43,17 +43,17 @@ export function Hero() {
                 onClick={(e) => e.preventDefault()}
                 className="inline-flex items-center justify-center rounded-lg bg-primary px-5 py-3 text-sm font-medium text-primary-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/80 disabled:opacity-60"
               >
-                Download App
+                Descargar App
               </Link>
               {/* <Link
                 href="#contact"
                 className="inline-flex items-center justify-center rounded-lg bg-secondary px-5 py-3 text-sm font-medium text-secondary-foreground focus:outline-none focus-visible:ring-2 focus-visible:ring-ring/80"
               >
-                Become a Provider
+                Conviértete en Proveedor
               </Link> */}
             </M.div>
 
-            {/* Trust indicators */}
+            {/* Indicadores de confianza */}
             <M.ul
               {...riseIn(0.12)}
               className="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4 text-sm text-muted-foreground"
@@ -63,26 +63,26 @@ export function Hero() {
                   aria-hidden
                   className="inline-block h-2.5 w-2.5 rounded-full bg-primary"
                 />
-                24/7 Support
+                Soporte 24/7
               </li>
               <li className="flex items-center gap-2">
                 <span
                   aria-hidden
                   className="inline-block h-2.5 w-2.5 rounded-full bg-accent"
                 />
-                Secure payments
+                Pagos seguros
               </li>
               <li className="flex items-center gap-2">
                 <span
                   aria-hidden
                   className="inline-block h-2.5 w-2.5 rounded-full bg-secondary"
                 />
-                Vetted providers
+                Proveedores verificados
               </li>
             </M.ul>
           </div>
 
-          {/* Visual column */}
+          {/* Columna visual */}
           <div className="relative">
             <div className="grid grid-cols-2 gap-4 sm:gap-6">
               <M.figure
@@ -91,12 +91,12 @@ export function Hero() {
               >
                 <img
                   src="/delivery-driver-on-motorbike.jpg"
-                  alt="Quick deliveries"
+                  alt="Entregas rápidas"
                   className="h-40 w-full rounded-md object-cover"
                   loading="lazy"
                 />
                 <figcaption className="mt-3 text-sm text-foreground">
-                  Lightning-fast deliveries with live updates.
+                  Entregas ultrarrápidas con actualizaciones en tiempo real.
                 </figcaption>
               </M.figure>
 
@@ -106,12 +106,12 @@ export function Hero() {
               >
                 <img
                   src="/roadside-assistance-tow-truck.png"
-                  alt="Roadside assistance"
+                  alt="Asistencia en carretera"
                   className="h-40 w-full rounded-md object-cover"
                   loading="lazy"
                 />
                 <figcaption className="mt-3 text-sm text-foreground">
-                  24/7 roadside help from trusted partners.
+                  Asistencia en carretera 24/7 de socios confiables.
                 </figcaption>
               </M.figure>
 
@@ -121,26 +121,15 @@ export function Hero() {
               >
                 <img
                   src="/mechanic-workshop-tools.jpg"
-                  alt="Mechanics network"
+                  alt="Red de mecánicos"
                   className="h-44 w-full rounded-md object-cover"
                   loading="lazy"
                 />
                 <figcaption className="mt-3 text-sm text-foreground">
-                  A citywide network of mechanics and workshops.
+                  Una red de mecánicos y talleres en toda la ciudad.
                 </figcaption>
               </M.figure>
             </div>
-
-            {/* Brand image for reinforcement */}
-            {/* <M.img
-              {...riseIn(0.15)}
-              src="/images/point-logo.jpg"
-              alt="POINT brand reference"
-              width={1200}
-              height={600}
-              loading="lazy"
-              className="mt-6 w-full rounded-xl border border-border/50 shadow-md"
-            /> */}
           </div>
         </div>
       </div>
