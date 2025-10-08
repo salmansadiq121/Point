@@ -7,58 +7,59 @@ export function About() {
   const { container, item } = useStagger(0.08);
 
   const metrics = [
-    { k: "Avg. Response", v: "7 min" },
-    { k: "Provider Pass Rate", v: "92%" },
-    { k: "Uptime (12m)", v: "99.9%" },
-    { k: "Cities", v: "15+" },
+    { k: "Tiempo de Respuesta Promedio", v: "7 min" },
+    { k: "Tasa de Aprobación de Proveedores", v: "92%" },
+    { k: "Disponibilidad (12m)", v: "99.9%" },
+    { k: "Ciudades", v: "15+" },
   ];
 
   const timeline = [
     {
       year: "2025",
-      text: "Ideation and first pilots in Maracaibo.",
+      text: "Ideación y primeros pilotos en Maracaibo.",
     },
     {
       year: "2025",
-      text: "Provider network expansion and payments hardening.",
+      text: "Expansión de la red de proveedores y fortalecimiento de pagos.",
     },
     {
       year: "2025",
-      text: "Launching nationwide with multi-city coverage.",
+      text: "Lanzamiento nacional con cobertura en múltiples ciudades.",
     },
   ];
 
   const values = [
     {
-      t: "Trust & Safety",
-      d: "Rigorous verification and continuous performance checks.",
+      t: "Confianza y Seguridad",
+      d: "Verificación rigurosa y controles de desempeño continuos.",
     },
     {
-      t: "Speed",
-      d: "Smart routing to the closest available provider.",
+      t: "Velocidad",
+      d: "Enrutamiento inteligente al proveedor disponible más cercano.",
     },
     {
-      t: "Transparency",
-      d: "Clear pricing and status updates from start to finish.",
+      t: "Transparencia",
+      d: "Precios claros y actualizaciones del estado de principio a fin.",
     },
   ];
 
   return (
     <SectionShell
       id="about"
-      title="Who We Are"
-      description="Built in Venezuela to connect users with trusted providers."
+      title="Quiénes Somos"
+      description="Creado en Venezuela para conectar usuarios con proveedores confiables."
     >
-      {/* About Text */}
+      {/* Texto descriptivo */}
       <M.div {...fade} className="prose prose-invert max-w-none">
         <p>
-          POINT is a platform created to unify everyday services in a single,
-          reliable experience. Our mission is simple: connect people with
-          verified providers and enable secure, transparent transactions.
+          POINT es una plataforma creada para unificar los servicios cotidianos
+          en una experiencia única y confiable. Nuestra misión es simple:
+          conectar a las personas con proveedores verificados y permitir
+          transacciones seguras y transparentes.
         </p>
       </M.div>
 
-      {/* Metrics */}
+      {/* Métricas */}
       <M.ul
         {...container}
         className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-4"
@@ -79,9 +80,9 @@ export function About() {
         ))}
       </M.ul>
 
-      {/* Timeline */}
+      {/* Línea de tiempo */}
       <div className="mt-10">
-        <h3 className="text-lg font-semibold">Our Journey</h3>
+        <h3 className="text-lg font-semibold">Nuestra Trayectoria</h3>
         <M.ol {...container} className="mt-4 space-y-4">
           {timeline.map((t, i) => (
             <M.li
@@ -97,9 +98,9 @@ export function About() {
         </M.ol>
       </div>
 
-      {/* Values */}
+      {/* Valores */}
       <div className="mt-10">
-        <h3 className="text-lg font-semibold">Our Values</h3>
+        <h3 className="text-lg font-semibold">Nuestros Valores</h3>
         <M.ul
           {...container}
           className="mt-4 grid grid-cols-1 gap-4 sm:grid-cols-3"
